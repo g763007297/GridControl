@@ -7,18 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B69521821CE2CEC400F288AF /* GQGridManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B695217D1CE2CEC400F288AF /* GQGridManagerView.m */; };
+		B69521831CE2CEC400F288AF /* GQGridViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = B695217F1CE2CEC400F288AF /* GQGridViewControl.m */; };
+		B69521841CE2CEC400F288AF /* gridcontrol_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B69521801CE2CEC400F288AF /* gridcontrol_add@2x.png */; };
+		B69521851CE2CEC400F288AF /* gridcontrol_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B69521811CE2CEC400F288AF /* gridcontrol_delete@2x.png */; };
 		DF78FBEC1C7743CD00E9719D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78FBEB1C7743CD00E9719D /* main.m */; };
 		DF78FBEF1C7743CD00E9719D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78FBEE1C7743CD00E9719D /* AppDelegate.m */; };
 		DF78FBFA1C7743CD00E9719D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF78FBF91C7743CD00E9719D /* Assets.xcassets */; };
 		DF78FBFD1C7743CD00E9719D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF78FBFB1C7743CD00E9719D /* LaunchScreen.storyboard */; };
-		DF78FC0A1C7743EE00E9719D /* GridViewControl.m in Sources */ = {isa = PBXBuildFile; fileRef = DF78FC081C7743EE00E9719D /* GridViewControl.m */; };
-		DF87CAB81C775A0A00709E98 /* GridManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF87CAB71C775A0A00709E98 /* GridManagerView.m */; };
 		DFAA37591C774B690093A213 /* GridControlViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DFAA37581C774B690093A213 /* GridControlViewController.m */; };
-		DFD0E1FD1C774E3400AE02D4 /* gridcontrol_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFD0E1FB1C774E3400AE02D4 /* gridcontrol_add@2x.png */; };
-		DFD0E1FE1C774E3400AE02D4 /* gridcontrol_delete@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DFD0E1FC1C774E3400AE02D4 /* gridcontrol_delete@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B695217C1CE2CEC400F288AF /* GQGridManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQGridManagerView.h; sourceTree = "<group>"; };
+		B695217D1CE2CEC400F288AF /* GQGridManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQGridManagerView.m; sourceTree = "<group>"; };
+		B695217E1CE2CEC400F288AF /* GQGridViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GQGridViewControl.h; sourceTree = "<group>"; };
+		B695217F1CE2CEC400F288AF /* GQGridViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GQGridViewControl.m; sourceTree = "<group>"; };
+		B69521801CE2CEC400F288AF /* gridcontrol_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gridcontrol_add@2x.png"; sourceTree = "<group>"; };
+		B69521811CE2CEC400F288AF /* gridcontrol_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gridcontrol_delete@2x.png"; sourceTree = "<group>"; };
 		DF78FBE71C7743CD00E9719D /* Gridcontrol.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridcontrol.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF78FBEB1C7743CD00E9719D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DF78FBED1C7743CD00E9719D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,14 +32,8 @@
 		DF78FBF91C7743CD00E9719D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF78FBFC1C7743CD00E9719D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF78FBFE1C7743CD00E9719D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DF78FC071C7743EE00E9719D /* GridViewControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridViewControl.h; sourceTree = "<group>"; };
-		DF78FC081C7743EE00E9719D /* GridViewControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridViewControl.m; sourceTree = "<group>"; };
-		DF87CAB61C775A0A00709E98 /* GridManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridManagerView.h; sourceTree = "<group>"; };
-		DF87CAB71C775A0A00709E98 /* GridManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridManagerView.m; sourceTree = "<group>"; };
 		DFAA37571C774B690093A213 /* GridControlViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GridControlViewController.h; sourceTree = "<group>"; };
 		DFAA37581C774B690093A213 /* GridControlViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GridControlViewController.m; sourceTree = "<group>"; };
-		DFD0E1FB1C774E3400AE02D4 /* gridcontrol_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gridcontrol_add@2x.png"; sourceTree = "<group>"; };
-		DFD0E1FC1C774E3400AE02D4 /* gridcontrol_delete@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gridcontrol_delete@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +47,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B695217B1CE2CEC400F288AF /* GQGridControlManager */ = {
+			isa = PBXGroup;
+			children = (
+				B695217C1CE2CEC400F288AF /* GQGridManagerView.h */,
+				B695217D1CE2CEC400F288AF /* GQGridManagerView.m */,
+				B695217E1CE2CEC400F288AF /* GQGridViewControl.h */,
+				B695217F1CE2CEC400F288AF /* GQGridViewControl.m */,
+				B69521801CE2CEC400F288AF /* gridcontrol_add@2x.png */,
+				B69521811CE2CEC400F288AF /* gridcontrol_delete@2x.png */,
+			);
+			name = GQGridControlManager;
+			path = ../../GQGridControlManager;
+			sourceTree = "<group>";
+		};
 		DF78FBDE1C7743CD00E9719D = {
 			isa = PBXGroup;
 			children = (
@@ -66,7 +80,7 @@
 		DF78FBE91C7743CD00E9719D /* Gridcontrol */ = {
 			isa = PBXGroup;
 			children = (
-				DF78FC041C7743EE00E9719D /* gridcontrol */,
+				B695217B1CE2CEC400F288AF /* GQGridControlManager */,
 				DF78FBED1C7743CD00E9719D /* AppDelegate.h */,
 				DF78FBEE1C7743CD00E9719D /* AppDelegate.m */,
 				DFAA37571C774B690093A213 /* GridControlViewController.h */,
@@ -85,19 +99,6 @@
 				DF78FBEB1C7743CD00E9719D /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		DF78FC041C7743EE00E9719D /* gridcontrol */ = {
-			isa = PBXGroup;
-			children = (
-				DFD0E1FB1C774E3400AE02D4 /* gridcontrol_add@2x.png */,
-				DFD0E1FC1C774E3400AE02D4 /* gridcontrol_delete@2x.png */,
-				DF87CAB61C775A0A00709E98 /* GridManagerView.h */,
-				DF87CAB71C775A0A00709E98 /* GridManagerView.m */,
-				DF78FC071C7743EE00E9719D /* GridViewControl.h */,
-				DF78FC081C7743EE00E9719D /* GridViewControl.m */,
-			);
-			path = gridcontrol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,9 +160,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF78FBFD1C7743CD00E9719D /* LaunchScreen.storyboard in Resources */,
-				DFD0E1FD1C774E3400AE02D4 /* gridcontrol_add@2x.png in Resources */,
+				B69521841CE2CEC400F288AF /* gridcontrol_add@2x.png in Resources */,
 				DF78FBFA1C7743CD00E9719D /* Assets.xcassets in Resources */,
-				DFD0E1FE1C774E3400AE02D4 /* gridcontrol_delete@2x.png in Resources */,
+				B69521851CE2CEC400F288AF /* gridcontrol_delete@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,10 +173,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF87CAB81C775A0A00709E98 /* GridManagerView.m in Sources */,
 				DF78FBEF1C7743CD00E9719D /* AppDelegate.m in Sources */,
 				DF78FBEC1C7743CD00E9719D /* main.m in Sources */,
-				DF78FC0A1C7743EE00E9719D /* GridViewControl.m in Sources */,
+				B69521831CE2CEC400F288AF /* GQGridViewControl.m in Sources */,
+				B69521821CE2CEC400F288AF /* GQGridManagerView.m in Sources */,
 				DFAA37591C774B690093A213 /* GridControlViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

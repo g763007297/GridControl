@@ -6,23 +6,25 @@
 //  Copyright (c) 2014年 tb. All rights reserved.
 //
 
-#import "GridViewControl.h"
+#import "GQGridViewControl.h"
 
-@interface GridViewControl ()
+@interface GQGridViewControl ()
 
 @property (strong, nonatomic) UIButton *button;
 @property (strong, nonatomic) UIButton *btnDelete;
 
+@property (nonatomic, assign) id<__GQGridControlDelegate> delegate;
+
 @end
 
-@implementation GridViewControl
+@implementation GQGridViewControl
 
-- (id)initWithFrame:(CGRect)frame withImage:(UIImage *)image atIndex:(NSInteger)index
+- (id)initWithFrame:(CGRect)frame withImage:(UIImage *)image atIndex:(NSInteger)index withDelegate:(id<__GQGridControlDelegate>)delegate
 {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor redColor];
-        
+        self.delegate = delegate;
         self.isEditing = NO;
         self.index = index;
         

@@ -6,7 +6,7 @@
 //  Copyright © 2016年 tusm. All rights reserved.
 //
 
-#import "GridManagerView.h"
+#import "GQGridManagerView.h"
 
 static CGFloat sItemWidth = 90.0f;   //图片的宽度
 static CGFloat sItemHeight = 90.0f; //图片的高度
@@ -19,17 +19,26 @@ static NSInteger sCommunityMaxCount = 3;    //每行显示的最大数
 
 static BOOL _canEdit = YES;
 
-@interface GridManagerView()
+@interface GQGridManagerView()<__GQGridControlDelegate,UIScrollViewDelegate>{
+    UIButton *addItemButton;//添加按钮
+    NSMutableArray *_arrayItem;//用于管理成员
+    BOOL isEditing;//是否为编辑状态
+    float sItemRowMargin;//行距
+    NSInteger rowMaxCount;
+}
+
+@property (nonatomic, weak) id<__GQGridManageDelegate>manageDelegate;
 
 @property (nonatomic, strong) UIScrollView *scrollView;
 
 @end
 
-@implementation GridManagerView
+@implementation GQGridManagerView
 
-- (id)initWithframe:(CGRect)rect withCanEdit:(BOOL)canEdit{
+- (id)initWithframe:(CGRect)rect withCanEdit:(BOOL)canEdit withDelegate:(id<__GQGridManageDelegate>)delegate{
     self = [super initWithFrame:rect];
     if (self) {
+        self.manageDelegate = delegate;
         _canEdit = canEdit;
     }
     return self;
@@ -70,13 +79,13 @@ static BOOL _canEdit = YES;
         [sender setSelected:YES];
     }
     if (isEditing) {
-        for (GridViewControl *item in _arrayItem) {
+        for (GQGridViewControl *item in _arrayItem) {
             [item disableEditing];
         }
         [addItemButton setHidden:NO];
         isEditing = NO;
     } else {
-        for (GridViewControl *item in _arrayItem) {
+        for (GQGridViewControl *item in _arrayItem) {
             [item enableEditing];
         }
         [addItemButton setHidden:YES];
@@ -88,7 +97,7 @@ static BOOL _canEdit = YES;
 
 - (void)addImage:(id)sender {
     if (isEditing) {
-        for (GridViewControl *item in _arrayItem) {
+        for (GQGridViewControl *item in _arrayItem) {
             [item disableEditing];
         }
         isEditing = NO;
@@ -103,13 +112,12 @@ static BOOL _canEdit = YES;
 
 - (void)addItemWithImage:(UIImage *)image
 {
-    GridViewControl *itemControl;
+    GQGridViewControl *itemControl;
     
     CGFloat x = (_arrayItem.count%sCommunityMaxCount)*(sItemWidth+sItemColumnMargin)+sItemColumnMargin;
     CGFloat y = (_arrayItem.count/sCommunityMaxCount)*(sItemHeight+sItemRowMargin) + sViewTop;
     
-    itemControl = [[GridViewControl alloc] initWithFrame:CGRectMake(x, y, sItemWidth, sItemHeight) withImage:image atIndex:[_arrayItem count]-1];
-    itemControl.delegate = self;
+    itemControl = [[GQGridViewControl alloc] initWithFrame:CGRectMake(x, y, sItemWidth, sItemHeight) withImage:image atIndex:[_arrayItem count]-1 withDelegate:self];
     [_arrayItem addObject:itemControl];
     [_scrollView addSubview:itemControl];
     
@@ -120,16 +128,16 @@ static BOOL _canEdit = YES;
 
 #pragma mark - GridControlDelegate
 
-- (void)gridItemDidClicked:(GridViewControl *)gridItem atIndex:(NSInteger)index
+- (void)gridItemDidClicked:(GQGridViewControl *)gridItem atIndex:(NSInteger)index
 {
     if ([self.manageDelegate respondsToSelector:@selector(gridItemDidClickedWithIndex:)]) {
         [self.manageDelegate gridItemDidClickedWithIndex:index];
     }
 }
 
-- (void)gridItemDidDeleted:(GridViewControl *)gridItem atIndex:(NSInteger)index
+- (void)gridItemDidDeleted:(GQGridViewControl *)gridItem atIndex:(NSInteger)index
 {
-    __block GridViewControl *item = [_arrayItem objectAtIndex:index];
+    __block GQGridViewControl *item = [_arrayItem objectAtIndex:index];
     
     [_arrayItem removeObjectAtIndex:index];
     
@@ -137,7 +145,7 @@ static BOOL _canEdit = YES;
         CGRect lastFrame = item.frame;
         CGRect curFrame;
         for (int i=(int)index; i < [_arrayItem count]; i++) {
-            GridViewControl *temp = [_arrayItem objectAtIndex:i];
+            GQGridViewControl *temp = [_arrayItem objectAtIndex:i];
             curFrame = temp.frame;
             [temp setFrame:lastFrame];
             lastFrame = curFrame;
@@ -161,19 +169,19 @@ static BOOL _canEdit = YES;
     }
 }
 
-- (void)gridItemDidLongPressed:(GridViewControl *)gridItem atIndex:(NSInteger)index
+- (void)gridItemDidLongPressed:(GQGridViewControl *)gridItem atIndex:(NSInteger)index
 {
     if (!_canEdit) {
         return;
     }
     if (isEditing) {
-        for (GridViewControl *item in _arrayItem) {
+        for (GQGridViewControl *item in _arrayItem) {
             [item disableEditing];
         }
         [addItemButton setHidden:NO];
         isEditing = NO;
     } else {
-        for (GridViewControl *item in _arrayItem) {
+        for (GQGridViewControl *item in _arrayItem) {
             [item enableEditing];
         }
         [addItemButton setHidden:YES];

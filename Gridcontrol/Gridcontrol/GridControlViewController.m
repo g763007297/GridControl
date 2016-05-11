@@ -7,11 +7,11 @@
 //
 
 #import "GridControlViewController.h"
-#import "GridManagerView.h"
+#import "GQGridManagerView.h"
 
-@interface GridControlViewController ()<GridManageDelegate>
+@interface GridControlViewController ()<__GQGridManageDelegate>
 
-@property (nonatomic, strong) GridManagerView *gridControl;
+@property (nonatomic, strong) GQGridManagerView *gridControl;
 
 @end
 
@@ -20,9 +20,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightTextColor];
-    _gridControl = [[GridManagerView alloc] initWithframe:CGRectMake(0, 0, 320, 480) withCanEdit:YES];
+    _gridControl = [[GQGridManagerView alloc] initWithframe:CGRectMake(0, 0, 320, 480) withCanEdit:YES withDelegate:self];
     [_gridControl setItemWidth:50 withItemHeight:60 withRowMaxCount:4 ];
-    _gridControl.manageDelegate = self;
     [self.view addSubview:_gridControl];
 }
 
