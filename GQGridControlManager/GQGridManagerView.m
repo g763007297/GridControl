@@ -117,7 +117,7 @@ static BOOL _canEdit = YES;
     CGFloat x = (_arrayItem.count%sCommunityMaxCount)*(sItemWidth+sItemColumnMargin)+sItemColumnMargin;
     CGFloat y = (_arrayItem.count/sCommunityMaxCount)*(sItemHeight+sItemRowMargin) + sViewTop;
     
-    itemControl = [[GQGridViewControl alloc] initWithFrame:CGRectMake(x, y, sItemWidth, sItemHeight) withImage:image atIndex:[_arrayItem count]-1 withDelegate:self];
+    itemControl = [[GQGridViewControl alloc] initWithFrame:CGRectMake(x, y, sItemWidth, sItemHeight) withImage:image atIndex:[_arrayItem count] withDelegate:self];
     [_arrayItem addObject:itemControl];
     [_scrollView addSubview:itemControl];
     
@@ -138,6 +138,18 @@ static BOOL _canEdit = YES;
 - (void)gridItemDidDeleted:(GQGridViewControl *)gridItem atIndex:(NSInteger)index
 {
     __block GQGridViewControl *item = [_arrayItem objectAtIndex:index];
+    
+    
+    CAKeyframeAnimation * anim = [ CAKeyframeAnimation animationWithKeyPath:@"transform" ] ;
+    anim.values = [ NSArray arrayWithObjects:
+                   [ NSValue valueWithCATransform3D:CATransform3DMakeTranslation(-5.0f, 0.0f, 0.0f) ],
+                   [ NSValue valueWithCATransform3D:CATransform3DMakeTranslation(5.0f, 0.0f, 0.0f) ],
+                   nil ] ;
+    anim.autoreverses = YES ;
+    anim.repeatCount = 2.0 ;
+    anim.duration = 0.07f ;
+    
+    [item.layer addAnimation:anim forKey:@"nil"];
     
     [_arrayItem removeObjectAtIndex:index];
     
